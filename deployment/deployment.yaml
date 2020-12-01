@@ -114,9 +114,15 @@ spec:
         app: pages
     spec:
       containers:
-      - image: adriandiandian/pages:1.0
+      - image: adriandiandian/pages:config
         imagePullPolicy: IfNotPresent
         name: pages
+        env:
+        - name: PAGE_CONTENT
+          valueFrom:
+            configMapKeyRef:
+              name: pages-conf
+              key: PAGE_CONTENT
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
