@@ -114,7 +114,7 @@ spec:
         app: pages
     spec:
       containers:
-      - image: adriandiandian/pages:config
+      - image: adriandiandian/pages:pipeline
         imagePullPolicy: IfNotPresent
         name: pages
         env:
